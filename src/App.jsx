@@ -715,7 +715,7 @@ export default function Portfolio() {
                         <span className="font-semibold">Summa Cum Laude (GPA: 5.0/5.0, Perfect Score)</span>
                       </div>
                       <p className="text-sm mt-1 text-slate-400 print:text-slate-600">
-                        Translating Advanced Material Science into Precision Clinical Solutions
+                         Translating Advanced Material Science into Precision Clinical Solutions
                       </p>
                     </div>
                   </div>
