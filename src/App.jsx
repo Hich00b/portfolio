@@ -54,7 +54,7 @@ const educationData = [
     degree: "Doctor of Medicine (M.D.)",
     institution: "University of Ferhat Abbas Setif 1",
     period: "2008-2015",
-    honors: "Medical Council of Canada Equivalency (E118201852IMM)",
+    honors: "Medical Council of Canada Equivalency",
     rotations: ["Cardiology", "Pediatrics", "Obstetrics & Gynecology", "Pediatric Surgery"],
     location: "Setif, Algeria",
     documents: [
