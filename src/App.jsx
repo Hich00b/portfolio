@@ -53,7 +53,7 @@ const educationData = [
   {
     degree: "Doctor of Medicine (M.D.)",
     institution: "University of Ferhat Abbas Setif 1",
-    period: "2008-2014",
+    period: "2008-2015",
     honors: "Medical Council of Canada Equivalency (E118201852IMM)",
     rotations: ["Cardiology", "Pediatrics", "Obstetrics & Gynecology", "Pediatric Surgery"],
     location: "Setif, Algeria",
@@ -240,7 +240,7 @@ const teachingExperience = [
   {
     title: "Expert Consultant - Practicum",
     institution: "ITMO University",
-    period: "March 2025 - Present",
+    period: "March 2025 - June 2025",
     location: "St. Petersburg, Russia",
     role: "Innovation Management in Biotech",
     achievements: [
@@ -712,7 +712,7 @@ export default function Portfolio() {
                     <div className="text-slate-300 text-lg mb-8 leading-relaxed border-l-4 border-cyan-500 pl-4 bg-white/5 py-4 rounded-r-xl backdrop-blur-sm print:text-black print:bg-transparent print:border-l-black">
                       <div className="flex items-center gap-2 mb-2">
                         <Award className="text-yellow-400 print:text-black" size={20} />
-                        <span className="font-semibold">Red Diploma M.Sc. (GPA 5.0/5.0)</span>
+                        <span className="font-semibold">M.Sc., Summa Cum Laude (GPA: 5.0/5.0, Perfect Score)</span>
                       </div>
                       <p className="text-sm mt-1 text-slate-400 print:text-slate-600">
                         Elite Academic Credentials • Clinical Expertise → Nanomedicine Research → Translational Science
