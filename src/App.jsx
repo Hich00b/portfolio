@@ -311,10 +311,26 @@ const voluntaryService = [
 ];
 
 const skillsMatrix = [
-  { category: "Laboratory & Research", skills: ["HPLC-MS/MS","GC", "Dynamic Light Scattering", "Fluorescence Spectroscopy", "TLC", "Cell Culture (HeLa, HEK)", "Atomic Force Microscopy (AFM)", "ImageJ", "GraphPad Prism", "ADME/PK Profiling", "PCR/RT-PCR", "Raman Spectroscopy", "spectrophotometry", "UV-Vis-NIR", "siRNA Design", "Plant Exosome Isolation", "ELISA", "Western Blotting", "Cytotoxicity assays (MTT)", "Lyophilization", "DNA Extraction", "Gel Electrophoresis"] },
-  { category: "Clinical & Professional", skills: ["Emergency Medicine", "ACLS", "Occupational Health", "Pharmacovigilance", "Minor Surgery", "Clinical Procedures", "Clinical Management", "Medical Education & Supervision", "Diagnostic Skills" , "Ultrasound", "Patient Education","GCP (Good Clinical Practice)" ,"HSE Protocols" , "Digital Health & Technology", "Clinical Trial Design"] },
-  { category: "Bioinformatics & Data", skills: ["RStudio", "Python", "BLAST", "Clustal Omega", "mfold", "PyMOL", "Genome Browser","SQL (Healthcare Data)" , "Ensembl"] },
-  { category: "Digital & Languages", skills: ["WordPress/WooCommerce", "HTML/CSS", "Docker Compose", "Adobe Photoshop/GIMP", "SEO (Yoast/Rank Math)", "Arabic (Native)", "English (C1)", "French (C1)", "Spanish (B1)", "Russian (A2)"] }
+  { 
+    category: "Laboratory & Research", 
+    skills: ["HPLC-MS/MS","GC", "Dynamic Light Scattering", "Fluorescence Spectroscopy", "TLC", "Cell Culture (HeLa, HEK)", "Atomic Force Microscopy (AFM)", "ImageJ", "GraphPad Prism", "ADME/PK Profiling", "PCR/RT-PCR", "Raman Spectroscopy", "Spectrophotometry", "UV-Vis-NIR", "siRNA Design", "Plant Exosome Isolation", "ELISA", "Western Blotting", "Cytotoxicity assays (MTT)", "Lyophilization", "DNA Extraction", "Gel Electrophoresis"] 
+  },
+  { 
+    category: "Clinical & Professional", 
+    skills: ["Emergency Medicine", "ACLS", "Occupational Health", "Pharmacovigilance", "Minor Surgery", "Clinical Procedures", "Clinical Management", "Medical Education & Supervision", "Diagnostic Skills" , "Ultrasound", "Patient Education","GCP (Good Clinical Practice)" ,"HSE Protocols" , "Digital Health & Technology", "Clinical Trial Design"] 
+  },
+  { 
+    category: "Bioinformatics & Data", 
+    skills: ["RStudio", "Python", "BLAST", "Clustal Omega", "mfold", "PyMOL", "Genome Browser","SQL (Healthcare Data)" , "Ensembl"] 
+  },
+  { 
+    category: "Digital Competencies", 
+    skills: ["React.js & Vite", "Tailwind CSS", "Git & GitHub", "Cloudflare Pages", "WordPress & WooCommerce", "Elementor Pro", "HTML5/CSS3", "Docker Compose", "Adobe Photoshop/GIMP", "SEO (Yoast/Rank Math)", "Microsoft Office Suite", "BioRender"] 
+  },
+  { 
+    category: "Languages", 
+    skills: ["Arabic (Native)", "English (C1)", "French (C1)", "Spanish (B1)", "Maltese (B1)", "Russian (A2)"] 
+  }
 ];
 
 const certifications = [
@@ -972,19 +988,24 @@ export default function Portfolio() {
             </Card>
           </div>
 
-          {/* Section 7: Skills Matrix (UPDATED to show ALL skills) */}
+          {/* Section 7: Skills Matrix */}
           <SectionTitle id="skills" icon={Cpu} title="Technical Skills Matrix" />
           <div className="grid md:grid-cols-2 gap-8 mb-20">
              {skillsMatrix.map((category, index) => (
-                <Card key={index}>
-                   <h4 className="font-bold text-slate-800 mb-4 border-b border-slate-100 pb-2">{category.category}</h4>
+                <Card key={index} className={category.category === "Languages" ? "border-l-4 border-l-amber-500" : ""}>
+                   <h4 className="font-bold text-slate-800 mb-4 border-b border-slate-100 pb-2 flex items-center justify-between">
+                      {category.category}
+                      {category.category === "Languages" && <Globe size={16} className="text-amber-500"/>}
+                   </h4>
                    <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill, i) => (
-                         <span key={i} className={`px-3 py-1 text-xs rounded-full border ${
-                            index === 0 ? 'bg-purple-50 text-purple-700 border-purple-100' :
-                            index === 1 ? 'bg-green-50 text-green-700 border-green-100' :
-                            index === 2 ? 'bg-blue-50 text-blue-700 border-blue-100' :
-                            'bg-slate-50 text-slate-600 border-slate-100'
+                         <span key={i} className={`px-3 py-1 text-xs font-medium rounded-full border shadow-sm ${
+                            // Color logic based on category index
+                            index === 0 ? 'bg-purple-50 text-purple-700 border-purple-100' : // Lab
+                            index === 1 ? 'bg-green-50 text-green-700 border-green-100' :   // Clinical
+                            index === 2 ? 'bg-blue-50 text-blue-700 border-blue-100' :     // Bioinfo
+                            index === 3 ? 'bg-cyan-50 text-cyan-700 border-cyan-100' :     // Digital
+                            'bg-amber-50 text-amber-700 border-amber-100'                  // Languages
                          }`}>
                             {skill}
                          </span>
