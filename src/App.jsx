@@ -10,7 +10,7 @@ import {
 
 const contactInfo = {
   name: "Hichem Bensaada, M.D., M.Sc.",
-  title: "Physician-Scientist | Biotechnology Researcher",
+  title: "Physician-Scientist | Translational Nanomedicine",
   tagline: "Clinical Expertise → Nanomedicine Research → Translational Science",
   email: "Dr.Bensaada.H@gmx.com",
   phone: "+7 901 706 5069",
@@ -712,10 +712,10 @@ export default function Portfolio() {
                     <div className="text-slate-300 text-lg mb-8 leading-relaxed border-l-4 border-cyan-500 pl-4 bg-white/5 py-4 rounded-r-xl backdrop-blur-sm print:text-black print:bg-transparent print:border-l-black">
                       <div className="flex items-center gap-2 mb-2">
                         <Award className="text-yellow-400 print:text-black" size={20} />
-                        <span className="font-semibold">M.Sc., Summa Cum Laude (GPA: 5.0/5.0, Perfect Score)</span>
+                        <span className="font-semibold">Summa Cum Laude (GPA: 5.0/5.0, Perfect Score)</span>
                       </div>
                       <p className="text-sm mt-1 text-slate-400 print:text-slate-600">
-                        Elite Academic Credentials • Clinical Expertise → Nanomedicine Research → Translational Science
+                        Bridging Clinical Insight with Nanomedicine Innovation
                       </p>
                     </div>
                   </div>
