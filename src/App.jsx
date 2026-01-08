@@ -306,7 +306,7 @@ const voluntaryService = [
     institution: "The Algerian Red Crescent",
     period: "Since 2009",
     description: "Active participation in humanitarian and medical relief activities",
-    documents: ["Certificate"]
+    documents: [{ name: "Membership Card", type: "Certificate", filename: "algerian-red-crescent-membership-card.pdf" }]
   }
 ];
 
