@@ -59,7 +59,7 @@ const educationData = [
     location: "Setif, Algeria",
     documents: [
       { name: "M.D. Diploma", type: "Diploma", filename: "md-diploma.pdf" },
-      { name: "Medical Degree Recognition Report By The MCC: Canadian Equivalency Established", type: "Report", filename: "recognition-of-diploma-canada-report.pdf" },
+      { name: "MCC Report: Canadian Equivalency Established", type: "Report", filename: "recognition-of-diploma-canada-report.pdf" },
       { name: "Clinical Rotation Certificates", type: "Certificate", filename: "clinical-rotation-certificates.pdf" }
     ]
   },
