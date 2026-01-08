@@ -241,7 +241,7 @@ const teachingExperience = [
     title: "Expert Consultant - Practicum",
     institution: "ITMO University",
     period: "March 2025 - Present",
-    location: "Moscow, Russia",
+    location: "St. Petersburg, Russia",
     role: "Innovation Management in Biotech",
     achievements: [
       "Provided expert insights on innovation management and biopharmaceutical applications",
