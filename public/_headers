@@ -1,0 +1,7 @@
+# Force browsers to check for a new index.html every time
+/index.html
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
+# Cache static assets (images, css, js) for a long time because their names change
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
