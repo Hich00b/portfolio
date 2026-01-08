@@ -789,7 +789,7 @@ export default function Portfolio() {
             {educationData.map((edu, index) => (
               <Card key={index} className={index === 0 ? "border-l-4 border-l-red-500 relative overflow-hidden" : "border-l-4 border-l-blue-500"}>
                 {index === 0 && (
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold px-4 py-2 rounded-bl-lg shadow-lg">
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white text-[10px] md:text-xs font-bold px-3 py-1 md:px-4 md:py-2 rounded-bl-lg shadow-lg">
                     HIGHEST DISTINCTION
                   </div>
                 )}
