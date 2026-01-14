@@ -103,7 +103,7 @@ const researchExperience = [
     achievements: [
       "Created stable dispersions of functionalized CoMoCAT and HiPCO Single-Walled Carbon Nanotubes (SWCNTs)",
       "Employed filtration and purification techniques to isolate SWCNTs for biomedical applications",
-      "Used UV-Vis-IR spectroscopy, AFM, and photoluminescence analysis (HORIBA Fluorolog-QM)",
+      "Used UV-Vis-IR spectroscopy, AFM, and photoluminescence analysis (HORIBA Fluorolog-QM) for characterization",
       "Functionalized SWCNTs with surfactants, polymeres, peptides, proteins, other biopolymeres for targeted siRNA delivery",
       "Established joint research project between Skoltech and Sechenov University"
     ],
@@ -313,7 +313,7 @@ const voluntaryService = [
 const skillsMatrix = [
   { 
     category: "Laboratory & Research", 
-    skills: ["HPLC-MS/MS","GC", "Dynamic Light Scattering", "Fluorescence Spectroscopy", "TLC", "Cell Culture (HeLa, HEK)", "Atomic Force Microscopy (AFM)", "ImageJ", "GraphPad Prism", "ADME/PK Profiling", "PCR/RT-PCR", "Raman Spectroscopy", "Spectrophotometry", "UV-Vis-NIR", "siRNA Design", "Plant Exosome Isolation", "ELISA", "Western Blotting", "Cytotoxicity assays (MTT)", "Lyophilization", "DNA Extraction", "Gel Electrophoresis"] 
+    skills: ["HPLC-MS/MS","GC", "Dynamic Light Scattering", "Fluorescence Spectroscopy", "TLC", "Cell Culture (HeLa, HEK)", "Atomic Force Microscopy (AFM)", "ImageJ", "GraphPad Prism", "ADME/PK Profiling", "PCR/RT-PCR", "AFM", "Spectrophotometry", "UV-Vis-NIR", "siRNA Design", "Plant Exosome Isolation", "ELISA", "Western Blotting", "Cytotoxicity assays (MTT)", "Lyophilization", "DNA Extraction", "Gel Electrophoresis"] 
   },
   { 
     category: "Clinical & Professional", 
