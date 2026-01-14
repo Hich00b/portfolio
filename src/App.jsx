@@ -103,11 +103,11 @@ const researchExperience = [
     achievements: [
       "Created stable dispersions of functionalized CoMoCAT and HiPCO Single-Walled Carbon Nanotubes (SWCNTs)",
       "Employed filtration and purification techniques to isolate SWCNTs for biomedical applications",
-      "Used UV-Vis-IR spectroscopy, Raman spectroscopy, and photoluminescence analysis (Fluorolog-QM)",
-      "Functionalized SWCNTs with oligonucleotides and RNA molecules for targeted siRNA delivery",
+      "Used UV-Vis-IR spectroscopy, AFM, and photoluminescence analysis (HORIBA Fluorolog-QM)",
+      "Functionalized SWCNTs with surfactants, polymeres, peptides, proteins, other biopolymeres for targeted siRNA delivery",
       "Established joint research project between Skoltech and Sechenov University"
     ],
-    skills: ["Carbon Nanotubes", "Raman Spectroscopy", "Nanomaterial Synthesis", "Biomedical Applications"],
+    skills: ["Carbon Nanotubes", "AFM", "Spectrofluorometer", "Nanomaterial Synthesis", "Biomedical Applications"],
     documents: [{ name: "Internship Certificate", type: "Certificate", filename: "skoktech-internship-certificate.pdf" }]
   },
   {
