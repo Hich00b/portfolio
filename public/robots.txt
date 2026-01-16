@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Replace with your actual link if different
+Sitemap: https://dr-bensaada.pages.dev/sitemap.xml
+Host: https://dr-bensaada.pages.dev

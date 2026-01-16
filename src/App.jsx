@@ -103,11 +103,11 @@ const researchExperience = [
     achievements: [
       "Created stable dispersions of functionalized CoMoCAT and HiPCO Single-Walled Carbon Nanotubes (SWCNTs)",
       "Employed filtration and purification techniques to isolate SWCNTs for biomedical applications",
-      "Used UV-Vis-IR spectroscopy, AFM, and photoluminescence analysis (HORIBA Fluorolog-QM) for characterization",
-      "Functionalized SWCNTs with surfactants, polymeres, peptides, proteins, other biopolymeres for targeted siRNA delivery",
+      "Used UV-Vis-IR spectroscopy, Raman spectroscopy, and photoluminescence analysis (Fluorolog-QM)",
+      "Functionalized SWCNTs with oligonucleotides and RNA molecules for targeted siRNA delivery",
       "Established joint research project between Skoltech and Sechenov University"
     ],
-    skills: ["Carbon Nanotubes", "AFM", "Spectrofluorometer", "Nanomaterial Synthesis", "Biomedical Applications"],
+    skills: ["Carbon Nanotubes", "Raman Spectroscopy", "Nanomaterial Synthesis", "Biomedical Applications"],
     documents: [{ name: "Internship Certificate", type: "Certificate", filename: "skoktech-internship-certificate.pdf" }]
   },
   {
@@ -313,7 +313,7 @@ const voluntaryService = [
 const skillsMatrix = [
   { 
     category: "Laboratory & Research", 
-    skills: ["HPLC-MS/MS","GC", "Dynamic Light Scattering", "Fluorescence Spectroscopy", "TLC", "Cell Culture (HeLa, HEK)", "Atomic Force Microscopy (AFM)", "ImageJ", "GraphPad Prism", "ADME/PK Profiling", "PCR/RT-PCR", "AFM", "Spectrophotometry", "UV-Vis-NIR", "siRNA Design", "Plant Exosome Isolation", "ELISA", "Western Blotting", "Cytotoxicity assays (MTT)", "Lyophilization", "DNA Extraction", "Gel Electrophoresis"] 
+    skills: ["HPLC-MS/MS","GC", "Dynamic Light Scattering", "Fluorescence Spectroscopy", "TLC", "Cell Culture (HeLa, HEK)", "Atomic Force Microscopy (AFM)", "ImageJ", "GraphPad Prism", "ADME/PK Profiling", "PCR/RT-PCR", "Raman Spectroscopy", "Spectrophotometry", "UV-Vis-NIR", "siRNA Design", "Plant Exosome Isolation", "ELISA", "Western Blotting", "Cytotoxicity assays (MTT)", "Lyophilization", "DNA Extraction", "Gel Electrophoresis"] 
   },
   { 
     category: "Clinical & Professional", 
@@ -373,15 +373,15 @@ const awards = [
   { 
     title: "Certificate of Honor for Scientific Activities", 
     institution: "Sechenov University", 
-    year: "2025",
-    description: "For outstanding research performance during M.Sc. studies",
+    year: "2025", 
+    description: "For outstanding research performance during M.Sc. studies", 
     filename: "certificate-of-honor.pdf" 
   },
   { 
     title: "Baccalaureate with High Honors", 
     institution: "Experimental Sciences", 
-    year: "2008",
-    description: "Graduated with high honors in national baccalaureate exams",
+    year: "2008", 
+    description: "Graduated with high honors in national baccalaureate exams", 
     filename: "baccalaureate-diploma.pdf" 
   }
 ];
@@ -416,21 +416,6 @@ const conferences = [
     presentation: "Findings from my MSc thesis on novel drug-delivery platforms (carbon nanotubes and plant-derived exosomes)",
     filename: "conference-advance-your-drug-development-expertise.pdf"
   }
-];
-
-const networksMemberships = [
-  { name: "The Algerian National Order of Physicians", since: "2015" },
-  { name: "Association for Single Cell Analysis (ASCA)", since: "2024" },
-  { name: "AIESEC (International Association of Students in Economics and Business)", since: "2010" },
-  { name: "National Organization of Algerian Students (O.N.E.A)", since: "2010-2015" },
-  { name: "Scientific Club Association of the Faculty of Medicine of Setif", since: "2010-2015" },
-  { name: "The Algerian Red Crescent", since: "2009" }
-];
-
-const podcastEpisodes = [
-  { title: "Smart Hearts: AI in Cardiology", desc: "Exploring how artificial intelligence is revolutionizing cardiac care." },
-  { title: "Polyphenols: From Leaf to Life", desc: "The science behind antioxidant activity in natural compounds." },
-  { title: "Next-Gen RNA Technologies", desc: "Discussing the future of siRNA and gene therapy platforms." }
 ];
 
 const references = [
@@ -506,6 +491,7 @@ const TimelineItem = ({ year, title, desc, isLast }) => (
   </div>
 );
 
+// Updated ExperienceCard: Fixed color contrast and Aria Labels
 const ExperienceCard = ({ title, institution, period, location, achievements, skills, documents, children }) => (
   <Card className="mb-6 border-l-4 border-l-blue-600">
     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
@@ -550,7 +536,6 @@ const ExperienceCard = ({ title, institution, period, location, achievements, sk
         <h4 className="font-semibold text-slate-800 mb-2 text-xs uppercase">Documents</h4>
         <div className="space-y-2">
           {documents.map((doc, idx) => {
-            // Handle both string and object formats
             const docName = typeof doc === 'string' ? doc : doc.name;
             const docFilename = typeof doc === 'string' ? 
               doc.toLowerCase().replace(/\s+/g, '-') + '.pdf' : 
@@ -563,11 +548,12 @@ const ExperienceCard = ({ title, institution, period, location, achievements, sk
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer no-underline"
+                className="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer no-underline group"
+                aria-label={`Download ${docName}`}
               >
                 <div className="flex items-center gap-3">
-                  <FileText size={16} className="text-slate-400" />
-                  <span className="text-sm font-medium text-slate-700">{docName}</span>
+                  <FileText size={16} className="text-slate-500" />
+                  <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">{docName}</span>
                 </div>
                 <Download size={16} className="text-blue-600" />
               </a>
@@ -606,7 +592,7 @@ export default function Portfolio() {
     { id: 'voluntary', label: 'Voluntary Service', icon: Heart },
     { id: 'scicomm', label: 'Science Communication', icon: Mic },
     { id: 'skills', label: 'Skills & Languages', icon: Languages },
-    { id: 'certs', label: 'Certifications & Awards', icon: Award }, // Combined here
+    { id: 'certs', label: 'Certifications & Awards', icon: Award },
     { id: 'publications', label: 'Publications', icon: FileText },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
@@ -626,6 +612,7 @@ export default function Portfolio() {
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)} 
           className="p-2 hover:bg-slate-100 rounded-md"
+          aria-label="Toggle Menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -641,7 +628,7 @@ export default function Portfolio() {
                 src="/images/profile-picture.webp" 
                 alt="Dr. Hichem Bensaada"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: "50% 25%" }} /* Adjust face position */
+                style={{ objectPosition: "50% 25%" }} 
                 onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.nextSibling.style.display = 'flex';
@@ -671,9 +658,9 @@ export default function Portfolio() {
           
           <div className="pt-6 border-t border-slate-700">
             <div className="flex gap-3 justify-center">
-              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors"><Linkedin size={18} /></a>
-              <a href={`mailto:${contactInfo.email}`} className="p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors"><Mail size={18} /></a>
-              <a href={contactInfo.podcast} target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 hover:bg-purple-600 rounded-lg transition-colors"><Mic size={18} /></a>
+              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors" aria-label="LinkedIn"><Linkedin size={18} /></a>
+              <a href={`mailto:${contactInfo.email}`} className="p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors" aria-label="Email"><Mail size={18} /></a>
+              <a href={contactInfo.podcast} target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 hover:bg-purple-600 rounded-lg transition-colors" aria-label="Podcast"><Mic size={18} /></a>
             </div>
           </div>
         </aside>
@@ -692,7 +679,7 @@ export default function Portfolio() {
                       src="/images/profile-picture.webp" 
                       alt="Dr. Hichem Bensaada"
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: "50% 20%" }} /* Adjust face position */
+                      style={{ objectPosition: "50% 20%" }} 
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
@@ -715,7 +702,7 @@ export default function Portfolio() {
                         <span className="font-semibold">Summa Cum Laude (GPA: 5.0/5.0, Perfect Score)</span>
                       </div>
                       <p className="text-sm mt-1 text-slate-400 print:text-slate-600">
-                         Translating Advanced Material Science into Precision Clinical Solutions
+                          Translating Advanced Material Science into Precision Clinical Solutions
                       </p>
                     </div>
                   </div>
@@ -847,11 +834,12 @@ export default function Portfolio() {
                               download
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:bg-blue-50 transition-colors no-underline"
+                              className="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg hover:bg-blue-50 transition-colors no-underline group"
+                              aria-label={`Download ${docName}`}
                             >
                               <div className="flex items-center gap-3">
-                                <FileText size={16} className="text-slate-400" />
-                                <span className="text-sm font-medium text-slate-700">{docName}</span>
+                                <FileText size={16} className="text-slate-500" />
+                                <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">{docName}</span>
                               </div>
                               <Download size={16} className="text-blue-600" />
                             </a>
@@ -911,7 +899,7 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Section 5.1: Voluntary Service (ADDED NEW SECTION HERE) */}
+          {/* Section 5.1: Voluntary Service */}
           <SectionTitle id="voluntary" icon={Heart} title="Voluntary Service" />
           <div className="space-y-8 mb-20">
             {voluntaryService.map((service, index) => (
@@ -934,7 +922,6 @@ export default function Portfolio() {
               </div>
               <p className="text-slate-300 text-sm mb-4">Science podcast focused on cutting‑edge biomedical research.</p>
               
-              {/* Episodes List */}
               <div className="space-y-3 mb-6">
                  <div className="p-3 bg-white/10 rounded-lg">
                    <div className="font-bold text-sm">Latest Episodes</div>
@@ -950,18 +937,17 @@ export default function Portfolio() {
                  <a href={contactInfo.youtube} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 bg-red-600 rounded-lg text-sm font-bold hover:bg-red-500 transition-colors">
                    <Youtube size={16} /> YouTube
                  </a>
-                 <a href={contactInfo.spotify} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 bg-green-600 rounded-lg text-sm font-bold hover:bg-green-500 transition-colors">
+                 <a href={contactInfo.spotify} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 bg-green-700 rounded-lg text-sm font-bold hover:bg-green-600 transition-colors">
                    <Music size={16} /> Spotify
                  </a>
               </div>
             </Card>
 
-            {/* HealthTech Award */}
             <Card>
                 <div className="flex items-center gap-3 mb-4">
                     <Award className="text-yellow-500" size={24} />
                     <div>
-                        <h3 className="font-bold text-slate-800">HealthTech Entrepreneurship (Interuniversity Championship)</h3>
+                        <h3 className="font-bold text-slate-800">HealthTech Entrepreneurship</h3>
                         <span className="text-xs font-bold bg-yellow-100 text-yellow-800 px-2 py-1 rounded">2nd Place Winner</span>
                     </div>
                 </div>
@@ -969,13 +955,13 @@ export default function Portfolio() {
                 <p className="text-sm font-medium text-slate-800">Project: "Natural Delivery Platform for Gene Therapy"</p>
                 <div className="mt-4 pt-4 border-t border-slate-100">
                     <div className="flex flex-col gap-3">
-                        {/* FIX THIS: Change from div to anchor tag */}
                         <a 
                             href="/documents/sechenovtech-certificate.pdf"
                             download
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-between p-3 bg-slate-50 rounded-lg hover:bg-blue-50 cursor-pointer transition-colors group no-underline border border-slate-200"
+                            aria-label="Download HealthTech Certificate"
                         >
                             <div className="flex items-center gap-3">
                                 <FileText size={16} className="text-slate-500 group-hover:text-blue-600" />
@@ -993,19 +979,18 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-8 mb-20">
              {skillsMatrix.map((category, index) => (
                 <Card key={index} className={category.category === "Languages" ? "border-l-4 border-l-amber-500" : ""}>
-                   <h4 className="font-bold text-slate-800 mb-4 border-b border-slate-100 pb-2 flex items-center justify-between">
+                   <h3 className="font-bold text-slate-800 mb-4 border-b border-slate-100 pb-2 flex items-center justify-between">
                       {category.category}
                       {category.category === "Languages" && <Globe size={16} className="text-amber-500"/>}
-                   </h4>
+                   </h3>
                    <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill, i) => (
                          <span key={i} className={`px-3 py-1 text-xs font-medium rounded-full border shadow-sm ${
-                            // Color logic based on category index
-                            index === 0 ? 'bg-purple-50 text-purple-700 border-purple-100' : // Lab
-                            index === 1 ? 'bg-green-50 text-green-700 border-green-100' :   // Clinical
-                            index === 2 ? 'bg-blue-50 text-blue-700 border-blue-100' :     // Bioinfo
-                            index === 3 ? 'bg-cyan-50 text-cyan-700 border-cyan-100' :     // Digital
-                            'bg-amber-50 text-amber-700 border-amber-100'                  // Languages
+                            index === 0 ? 'bg-purple-50 text-purple-700 border-purple-100' : 
+                            index === 1 ? 'bg-green-50 text-green-700 border-green-100' :   
+                            index === 2 ? 'bg-blue-50 text-blue-700 border-blue-100' :      
+                            index === 3 ? 'bg-cyan-50 text-cyan-700 border-cyan-100' :      
+                            'bg-amber-50 text-amber-700 border-amber-100'                   
                          }`}>
                             {skill}
                          </span>
@@ -1048,13 +1033,14 @@ export default function Portfolio() {
                         download
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-3 pt-3 border-t border-indigo-100 flex items-center justify-between cursor-pointer hover:text-indigo-600 text-slate-400"
+                        className="mt-3 pt-3 border-t border-indigo-100 flex items-center justify-between cursor-pointer hover:text-indigo-600 text-slate-400 no-underline group"
+                        aria-label="Download Engineering Physiology Diploma"
                       >
-                        <span className="text-xs font-medium">View Diploma</span>
-                        <Download size={14}/>
+                        <span className="text-xs font-medium group-hover:text-indigo-700">View Diploma</span>
+                        <Download size={14} className="group-hover:text-indigo-700"/>
                       </a>
                   </div>
-                )}
+               )}
 
                {/* Regular Certs */}
                {filteredCerts.map(cert => (
@@ -1083,16 +1069,16 @@ export default function Portfolio() {
                         download
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs flex items-center gap-1 hover:text-blue-600"
+                        className="text-xs flex items-center gap-1 hover:text-blue-600 no-underline text-slate-400"
+                        aria-label={`Download ${cert.title}`}
                       >
                         <Download size={14}/> Download
                       </a>
                     </div>
                   </div>
-                ))}
-                    
-
-              {/* Awards (Only show if tab is All or Awards) */}
+               ))}
+                   
+              {/* Awards */}
               {(activeTab === 'All' || activeTab === 'Awards') && awards.map((award, index) => (
                  <div key={`award-${index}`} className="bg-yellow-50/50 border border-yellow-200 rounded-xl p-4 shadow-sm">
                     <div className="flex justify-between items-start mb-2">
@@ -1107,7 +1093,8 @@ export default function Portfolio() {
                         download
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs flex items-center gap-1 hover:text-yellow-600"
+                        className="text-xs flex items-center gap-1 hover:text-yellow-600 no-underline text-slate-400"
+                        aria-label={`Download ${award.title}`}
                       >
                         <Download size={14}/> View Award
                       </a>
@@ -1147,17 +1134,16 @@ export default function Portfolio() {
                     </div>
                     <div className="flex flex-col items-end gap-2">
                         <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">{conf.role}</span>
-                        <button className="text-xs flex items-center gap-1 text-slate-400 hover:text-blue-600">
-                          <a 
+                        <a 
                             href={`/documents/${conf.filename}`}
                             download
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-1"
+                            className="text-xs flex items-center gap-1 text-slate-400 hover:text-blue-600 no-underline"
+                            aria-label={`Download details for ${conf.title}`}
                           >
                             <Download size={12}/> View Details
                           </a>
-                        </button>
                     </div>
                   </div>
                 ))}
@@ -1198,20 +1184,19 @@ export default function Portfolio() {
               <div className="flex justify-between items-center mb-6">
                 <h3 className="font-bold text-slate-900 text-xl">Professional References</h3>
                 
-                {/* UPDATED BUTTON: Changed from <button> to <a> */}
                 <a 
                   href="/documents/my-professional-references.pdf" 
                   download
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-xs bg-slate-100 hover:bg-slate-200 px-3 py-1 rounded flex items-center gap-1 text-slate-600 transition-colors cursor-pointer"
+                  className="text-xs bg-slate-100 hover:bg-slate-200 px-3 py-1 rounded flex items-center gap-1 text-slate-600 transition-colors cursor-pointer no-underline"
+                  aria-label="Download Full References List"
                 >
                   <Download size={12}/> Download List
                 </a>
             </div>
 
             <div className="space-y-4">
-              {/* This displays the first 3 references as a preview, hiding the rest */}
               {references.slice(0, 3).map((ref, index) => (
                 <div key={index} className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                   <div className="font-bold text-slate-800">{ref.name}</div>
